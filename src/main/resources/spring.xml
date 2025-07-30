@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="character" class="com.roberto.model.Character" scope="singleton" autowire="byName">
+        <property name="age" value="23"></property>
+        <property name="name" value="Chucky"></property>
+    </bean>
+    <bean id="award" class="com.roberto.model.Award" scope="singleton">
+        <constructor-arg index="0" value="Oscar"/>
+    </bean>
+    <bean id="gpu" class="com.roberto.model.GPU" scope="singleton" lazy-init="true">
+        <constructor-arg name="model" value="GTX 1060"></constructor-arg>
+        <constructor-arg name="clockSpeed" value="1500"></constructor-arg>
+    </bean>
+</beans>
